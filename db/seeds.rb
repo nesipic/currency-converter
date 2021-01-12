@@ -1,7 +1,18 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'date'
+start = Time.now
+puts "Clearing database..."
+Conversion.destroy_all
+User.destroy_all
+puts "Creating users..."
+User.create!(email: "alice@example.com", password: "123456")
+User.create!(email: "bob@example.com", password: "123456")
+puts "Creating conversions..."
+Conversion.create(from_currency: "USD", to_currency: "EUR", date: Date.today, amount: 10.00, result: 8.2, user: User.last)
+Conversion.create(from_currency: "USD", to_currency: "EUR", date: Date.today, amount: 10.00, result: 8.2, user: User.last)
+Conversion.create(from_currency: "USD", to_currency: "EUR", date: Date.today, amount: 10.00, result: 8.2, user: User.last)
+Conversion.create(from_currency: "USD", to_currency: "EUR", date: Date.today, amount: 10.00, result: 8.2, user: User.last)
+Conversion.create(from_currency: "USD", to_currency: "EUR", date: Date.today, amount: 10.00, result: 8.2, user: User.last)
+finish = Time.now
+diff = finish - start
+puts "Done in #{diff}"
+
