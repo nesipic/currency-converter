@@ -1,6 +1,6 @@
+require 'date'
+require 'money/bank/currencylayer_bank'
 class ConversionsController < ApplicationController
-  require 'date'
-  require 'money/bank/currencylayer_bank'
   def index
     @conversions = Conversion.where(user: current_user) 
   end
