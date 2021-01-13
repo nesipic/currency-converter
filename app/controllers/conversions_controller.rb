@@ -29,7 +29,7 @@ class ConversionsController < ApplicationController
   def convertion(amount, from, to)
     return nil if amount.class == String || amount == nil
     mclb = Money::Bank::CurrencylayerBank.new
-    mclb.access_key = '421e58acb209e71913c72e62293e9ed1'
+    mclb.access_key = ENV["CURRENCY_TOKEN"]
     mclb.update_rates
     rate = mclb.get_rate(from, to)
     (amount * rate.round(2)).round(2)

@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: #F26659;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -11,5 +11,14 @@
   width: 40px;
 }
 .btn-convrt {
+  font-weight: bold;
+  font-size: 20px;
+  border: 1px solid #F1F3F6;
+  box-shadow: 1px 1px 10px #F1F3F6;
+  padding: 3px 3px;
   background-color: #F26659;
+}
+.btn-convrt:hover {
+  border: 3px solid #F1F3F6;
+  background-color: #343A40;
 }

@@ -52,6 +52,8 @@ textarea.form-control {
   background-color: #F26659;
   margin-top: 100px;
   border-radius: 25px;
+  box-shadow: 2px 2px 10px #F1F3F6;
+  border: 1px solid #F1F3F6;
 }
 .amount {
   font-size: 50px;
@@ -63,9 +65,25 @@ textarea.form-control {
   color: white;
 }
 .button-mine:hover {
-  color: #0069d9;
+  color: #343A40;
 }
 .currency {
   font-weight: bold;
   font-size: 20px;
+  border: 1px solid #F1F3F6;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  box-shadow: 2px 2px 10px #F1F3F6;
+  padding: 3px 3px;
+  
 }
+
+.converter:hover{
+  border: 1px solid #344A40;
+}
+.currency:hover {
+  border: 3px solid #F1F3F6;
+  background-color: #343A40;
+}
+
