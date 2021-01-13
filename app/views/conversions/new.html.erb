@@ -1,0 +1,21 @@
+<div class="container d-flex flex-column align-items-center justify-content-center">
+  <div class="converter">
+    <div class="first-part d-flex justify-content-center">
+    <% @conversions = Conversion.where(user: current_user) %>
+      <%= simple_form_for @conversion do |f| %>
+        <%= f.input :amount, label: false, required: true, as: :text, input_html: { class: 'amount', value: @conversions.last.amount } %>
+        <%= f.input :from_currency, label: false, collection: ['USD', 'EUR', 'CHF'], input_html: { class: 'currency'}, include_blank: false %>
+       <div class="small-3 columns">
+        <%= button_tag type: 'submit', class: "button postfix border-0 buttoncic" do %>
+      <i class="fas fa-arrow-circle-down" aria-hidden="true"></i>
+  <% end %>
+  </div>
+        <%= f.input :to_currency, label: false, collection: ['EUR', 'CHF','USD'], input_html: { class: 'currency'}, include_blank: false %>
+      <% end %>
+    </div>
+    <div class="second-part">
+      <p class="result"><%= @conversions.last.result %></p>
+    </div>
+  </div>
+</div>
+ 

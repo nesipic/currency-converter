@@ -1,0 +1,63 @@
+.container-conv {
+  width: 500px;
+  height: 300px;
+  background-color: #F26659;
+  color: white;
+}
+.first-part {
+  width: 300px;
+}
+.form-control {
+  width: 100px;
+  background-color: #F26659;
+  border-radius: 5px;
+  text-align: center;
+  color: white;
+  border: 0px #F26659;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+    input[type=number] {
+      -moz-appearance:textfield;
+  }
+}
+  
+  
+}
+.result {
+  background-color:#F26659;
+  border-radius: 5px;
+  padding: 10px;
+  width: 150px;
+  text-align: center;
+  color: white;
+  font-size: 50px;
+}
+.converter {
+  background-color: #F26659;
+  margin-top: 100px;
+  border-radius: 25px;
+}
+.amount {
+  font-size: 50px;
+  width: 300px;
+}
+.btn-mine {
+  border-radius: 100%;
+}
+.buttoncic {
+  background-color: #F26659;
+  margin-left: 20px;
+  font-size: 50px;
+  color: white;
+}
+.buttoncic:hover {
+  color: black;
+}
+.currency {
+  font-weight: bold;
+}
