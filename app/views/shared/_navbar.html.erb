@@ -12,12 +12,14 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
+          <%= link_to "HISTORY", conversions_path, class: "btn-primary rounded-pill btn-convrt text-white font-weight-bold nav-link mr-5 px-3" %>
+        </li>
+        <li class="nav-item active">
           <%= link_to "CONVERTER", new_conversion_path, class: "btn-primary rounded-pill btn-convrt text-white font-weight-bold nav-link mr-5 px-3" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://avatars3.githubusercontent.com/u/68437832?s=400&u=4b5b8715955ad97f7c60e359cc2d2c2b4a800fe8&v=4", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "History", conversions_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>

@@ -1,18 +1,29 @@
 <% if @conversions.present? %>
-    <div class="py-5">
-      <h1>My conversions</h1>
-      <div class="row">
-        <% @conversions.each do |conversion| %>
-          <div class="card px-0 m-2" style="width: 300px;">
-              <div class="card-body">
-                <h5 class="card-text"><%= conversion.amount %></h5>
-                <h5 class="card-text"><%= conversion.from_currency %></h5>
-                <p>TO</p>
-                <p class="card-address"><%= conversion.to_currency %></p>
-                <p class="card-date"><%= l(conversion.date, format: :long) %></p>
-              </div>
-          </div>
-        <% end %>
-      </div>
-    </div>
-  <% end %>
+<h1 class="d-flex justify-content-center">My conversions</h1>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Amount</th>
+        <th scope="col">From</th>
+        <th scope="col">To</th>
+        <th scope="col">Result</th>
+        <th scope="col">Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @conversions.reverse.each_with_index do |conversion, index| %>
+        <tr>
+          <th scope="row"><%= index + 1 %></th>
+          <td><%= conversion.amount %></td>
+          <td><%= conversion.from_currency %></td>
+          <td><%= conversion.to_currency %></td>
+          <td><%= conversion.result %></td>
+          <td><%= l(conversion.date, format: :long) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <h1 class="d-flex justify-content-center">You don't have any conversions yet.</h1>
+<% end %>
