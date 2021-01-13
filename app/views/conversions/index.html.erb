@@ -9,6 +9,7 @@
         <th scope="col">To</th>
         <th scope="col">Result</th>
         <th scope="col">Date</th>
+        <th scope="col">Destroy</th>
       </tr>
     </thead>
     <tbody>
@@ -20,6 +21,7 @@
           <td><%= conversion.to_currency %></td>
           <td><%= conversion.result %></td>
           <td><%= l(conversion.date, format: :long) %></td>
+          <td><%= link_to '', conversion_path(conversion), class: "fa fa-trash trash-icon text-danger", method: :delete, data: { confirm: "Are you sure?" } %></td>
         </tr>
       <% end %>
     </tbody>

@@ -16,7 +16,11 @@ class ConversionsController < ApplicationController
     @conversion.result = convertion(@conversion.amount, @conversion.from_currency, @conversion.to_currency)
     @conversion.save ? (redirect_to new_conversion_path) : (render :new)
   end
-
+  def destroy
+    @conversion = Conversion.find(params[:id])
+    @conversion.destroy
+    redirect_to conversions_path
+  end
   private
   def strong_params
     params.require(:conversion).permit(:from_currency, :to_currency, :amount)
