@@ -15,10 +15,10 @@
       <% @conversions.reverse.each_with_index do |conversion, index| %>
         <tr>
           <th scope="row"><%= index + 1 %></th>
-          <td><%= conversion.amount %></td>
+          <td><%= conversion.amount.round(2) %></td>
           <td><%= conversion.from_currency %></td>
           <td><%= conversion.to_currency %></td>
-          <td><%= conversion.result %></td>
+          <td><%= conversion.result.round(2) %></td>
           <td><%= l(conversion.date, format: :long) %></td>
           <td><%= link_to '', conversion_path(conversion), class: "fa fa-trash trash-icon text-danger", method: :delete, data: { confirm: "Are you sure?" } %></td>
         </tr>

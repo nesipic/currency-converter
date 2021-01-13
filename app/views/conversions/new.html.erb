@@ -3,7 +3,7 @@
     <div class="first-part d-flex my-3 justify-content-center">
     <% @conversions = Conversion.where(user: current_user) || [] %>
       <%= simple_form_for @conversion do |f| %>
-        <%= f.input :amount, label: false, required: true, as: :text, input_html: { class: 'amount', value: (@conversions.empty?)? 0 : @conversions.last.amount } %>
+        <%= f.input :amount, label: false, required: true, as: :text, input_html: { class: 'amount', value: (@conversions.empty?)? 0 : @conversions.last.amount.round(2) } %>
         <div class="d-flex justify-content-center">
           <%= f.input :from_currency, label: false, collection: ['USD', 'EUR', 'CHF'], input_html: { class: 'currency'}, include_blank: false %>
         </div>
@@ -18,7 +18,7 @@
       <% end %>
     </div>
     <div class="second-part">
-      <p class="result"><%= (@conversions.empty?)? 0 : @conversions.last.result %></p>
+      <p class="result"><%= (@conversions.empty?)? 0 : @conversions.last.result.round(2) %></p>
     </div>
   </div>
 </div>
