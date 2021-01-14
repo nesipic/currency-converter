@@ -5,7 +5,7 @@
       <%= simple_form_for @conversion do |f| %>
         <%= f.input :amount, label: false, required: true, as: :text, input_html: { class: 'amount', value: (@conversions.empty?)? 0 : @conversions.last.amount.round(2) } %>
         <div class="d-flex justify-content-center">
-          <%= f.input :from_currency, label: false, collection: ['USD', 'EUR', 'CHF'], input_html: { class: 'currency'}, include_blank: false %>
+          <%= f.input :from_currency, label: false, collection: ['USD', 'EUR', 'CHF'], selected: @conversions.last.from_currency || 'USD' , input_html: { class: 'currency' }, include_blank: false %>
         </div>
         <div class="small-3 columns">
           <%= button_tag type: 'submit', class: "button postfix border-0 button-mine" do %>
@@ -13,7 +13,7 @@
           <% end %>
         </div>
         <div class="d-flex justify-content-center my-3">
-          <%= f.input :to_currency, label: false, collection: ['EUR', 'CHF','USD'], input_html: { class: 'currency'}, include_blank: false %>
+          <%= f.input :to_currency, label: false, collection: ['EUR', 'CHF','USD'], selected: @conversions.last.to_currency || 'EUR', input_html: { class: 'currency'}, include_blank: false %>
         </div>
       <% end %>
     </div>
