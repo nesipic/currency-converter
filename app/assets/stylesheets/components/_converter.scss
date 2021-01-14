@@ -26,17 +26,11 @@ textarea.form-control {
   text-align: center;
   color: white;
   border: 0px #F26659;
+  text-align-last: center;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  input[type=number]::-webkit-inner-spin-button, 
-  input[type=number]::-webkit-outer-spin-button { 
-    -webkit-appearance: none; 
-    margin: 0; 
-  input[type=number] {
-    -moz-appearance: textfield;
-  }
-}
+  
   
 }
 .result {
